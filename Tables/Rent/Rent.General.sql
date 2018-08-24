@@ -1,5 +1,3 @@
-USE [Go-Kart]
-GO
 
 /****** Object:  Table [Rent].[General]    Script Date: 24-08-2018 23:27:09 ******/
 SET ANSI_NULLS ON
