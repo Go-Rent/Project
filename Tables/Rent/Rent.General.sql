@@ -11,12 +11,11 @@ CREATE TABLE [Rent].[General](
 	[ItemDesc] [nchar](100) NOT NULL,
 	[ItemTitle] [nchar](50) NOT NULL,
 	[ItemBlob] [nchar](10) NULL,
-	[UserId] [nchar](10) NOT NULL,
+	[UserId] [INT] NOT NULL,
 	[ItemType] [nchar](20) NOT NULL,
 	[SecurityDeposit] [money] NULL,
 	[DateAdded] [datetime] NOT NULL,
 	[WarrantyPeriod_M] [nchar](10) NULL,
-	[RentId] [nchar](10) NOT NULL,
 	[WarrantyPeriod_Y] [nchar](10) NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -33,7 +32,7 @@ ALTER TABLE [Rent].[General] ADD  DEFAULT ((0)) FOR [WarrantyPeriod_Y]
 GO
 
 ALTER TABLE [Rent].[General]  WITH CHECK ADD  CONSTRAINT [FK_General_ToUser] FOREIGN KEY([UserId])
-REFERENCES [dbo].[User] ([UserId])
+REFERENCES [dbo].[Users] ([UserId])
 GO
 
 ALTER TABLE [Rent].[General] CHECK CONSTRAINT [FK_General_ToUser]
